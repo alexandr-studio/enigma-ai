@@ -1,0 +1,12 @@
+---
+description: Enforce Tailwind CSS v4 usage
+globs: **/*.{ts,tsx,js,jsx,html}
+alwaysApply: false
+---
+
+- Assume Tailwind CSS v4 features and syntax by default.
+- Never suggest Tailwind v3 syntax (e.g., deprecated utilities like `gap-x-` instead of `gap-x`).
+- Use `@tailwindcss/forms` and other plugins compatible with Tailwind v4 only.
+- Prefer `tailwind.config.ts` (if it exists) — otherwise infer configuration from usage.
+- Always suggest utilities and features introduced in Tailwind v4 (e.g., `content-visibility`, `supports-*` variants, logical properties).
+- For shadcn/ui components, assume v4-compatible classes (e.g., `ring-inset`, `isolate`, `aspect-[x/y]`).
