@@ -11,8 +11,8 @@ import {
   decryptCharacterThroughRotor,
   encryptCharacter,
   decryptCharacter,
-  encryptText,
-  decryptText,
+  encryptMessage,
+  decryptMessage,
 } from '../core';
 import { createTestRotor, createIdentityRotor } from '../generator';
 import { CHARSET } from '../types';
@@ -164,8 +164,8 @@ describe('multi-rotor encryption', () => {
     
     const originalText = 'Hello World.';
     
-    const encryptResult = encryptText(originalText, config, rotorMap);
-    const decryptResult = decryptText(encryptResult.result, config, rotorMap);
+    const encryptResult = encryptMessage(originalText, config, rotorMap);
+    const decryptResult = decryptMessage(encryptResult.result, config, rotorMap);
     
     expect(decryptResult.result).toBe(originalText);
   });
@@ -179,7 +179,7 @@ describe('multi-rotor encryption', () => {
       startPositions: [1],
     };
     
-    const result = encryptText('ABC', config, rotorMap);
+    const result = encryptMessage('ABC', config, rotorMap);
     
     // After encrypting 3 characters, the rotor should have stepped 3 times
     expect(result.finalPositions[0]).toBe(4); // 1 + 3 steps
@@ -197,7 +197,7 @@ describe('text encryption validation', () => {
       startPositions: [1],
     };
     
-    const result = encryptText('', config, rotorMap);
+    const result = encryptMessage('', config, rotorMap);
     expect(result.result).toBe('');
     expect(result.charactersProcessed).toBe(0);
     expect(result.finalPositions[0]).toBe(1); // No stepping
@@ -213,8 +213,8 @@ describe('text encryption validation', () => {
     };
     
     const text = 'Test Message.';
-    const result1 = encryptText(text, config, rotorMap);
-    const result2 = encryptText(text, config, rotorMap);
+    const result1 = encryptMessage(text, config, rotorMap);
+    const result2 = encryptMessage(text, config, rotorMap);
     
     expect(result1.result).toBe(result2.result);
     expect(result1.finalPositions).toEqual(result2.finalPositions);
@@ -228,6 +228,6 @@ describe('text encryption validation', () => {
       startPositions: [1],
     };
     
-    expect(() => encryptText('Test', config, rotorMap)).toThrow('not found');
+    expect(() => encryptMessage('Test', config, rotorMap)).toThrow('not found');
   });
 });

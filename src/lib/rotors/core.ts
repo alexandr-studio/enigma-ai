@@ -242,7 +242,7 @@ export function decryptCharacter(char: string, rotors: ActiveRotor[]): string {
  * @param availableRotors - Map of rotor IDs to rotor configurations
  * @returns The encryption result
  */
-export function encryptText(
+export function encryptMessage(
   text: string,
   config: EncryptionConfig,
   availableRotors: Map<string, RotorConfig>
@@ -281,6 +281,25 @@ export function encryptText(
 }
 
 /**
+ * Simple encryption function for UI compatibility
+ * Takes rotors directly instead of rotor IDs
+ */
+export function encryptText(
+  text: string,
+  rotors: RotorConfig[],
+  startPositions: number[]
+): CryptographyResult {
+  // Convert to the format expected by the main function
+  const rotorMap = new Map(rotors.map(rotor => [rotor.id, rotor]));
+  const config: EncryptionConfig = {
+    rotorIds: rotors.map(rotor => rotor.id),
+    startPositions: startPositions as RotorPosition[],
+  };
+  
+  return encryptMessage(text, config, rotorMap);
+}
+
+/**
  * Decrypts a complete text string using the rotor configuration
  * 
  * @param ciphertext - The encrypted text to decrypt
@@ -288,7 +307,7 @@ export function encryptText(
  * @param availableRotors - Map of rotor IDs to rotor configurations
  * @returns The decryption result
  */
-export function decryptText(
+export function decryptMessage(
   ciphertext: string,
   config: EncryptionConfig,
   availableRotors: Map<string, RotorConfig>
@@ -324,4 +343,23 @@ export function decryptText(
     obfuscationApplied: false, // TODO: Implement obfuscation in Phase 6
     warnings: warnings.length > 0 ? warnings : undefined,
   };
+}
+
+/**
+ * Simple decryption function for UI compatibility  
+ * Takes rotors directly instead of rotor IDs
+ */
+export function decryptText(
+  text: string,
+  rotors: RotorConfig[],
+  startPositions: number[]
+): CryptographyResult {
+  // Convert to the format expected by the main function
+  const rotorMap = new Map(rotors.map(rotor => [rotor.id, rotor]));
+  const config: EncryptionConfig = {
+    rotorIds: rotors.map(rotor => rotor.id),
+    startPositions: startPositions as RotorPosition[],
+  };
+  
+  return decryptMessage(text, config, rotorMap);
 }

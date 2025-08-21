@@ -138,6 +138,11 @@ export interface CryptographyResult {
 export const CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .' as const;
 
 /**
+ * The size of the character set (64 symbols)
+ */
+export const CHARSET_SIZE = CHARSET.length;
+
+/**
  * Maximum number of rotors that can be stored
  */
 export const MAX_STORED_ROTORS = 10;
