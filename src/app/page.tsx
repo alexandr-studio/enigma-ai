@@ -3,10 +3,10 @@ export default function HomePage() {
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-orange-900 mb-4">
             Enigma+ Encryption
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-orange-700 max-w-2xl mx-auto">
             Secure message encoding and decoding with custom rotor mappings 
             and advanced obfuscation features.
           </p>
@@ -14,10 +14,10 @@ export default function HomePage() {
         
         <div className="bg-white rounded-lg shadow-sm border border-orange-200 p-8">
           <div className="text-center">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-2xl font-semibold text-orange-800 mb-4">
               Welcome to Enigma+
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-orange-600 mb-6">
               This application is currently under development. 
               The encryption engine and user interface are being built.
             </p>
