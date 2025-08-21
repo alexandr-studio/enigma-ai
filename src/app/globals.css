@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-/* Tailwind CSS v4 Theme Configuration */
 @theme {
-  /* Warm color palette for Enigma+ */
+  /* Base design tokens */
+  --radius: 0.5rem;
+  
+  /* Warm orange color palette for Enigma+ */
   --color-orange-25: oklch(0.98 0.02 70);
   --color-orange-50: oklch(0.96 0.04 70);
   --color-orange-100: oklch(0.93 0.08 70);
@@ -27,7 +29,7 @@
   --color-amber-800: oklch(0.38 0.16 85);
   --color-amber-900: oklch(0.32 0.12 85);
 
-  /* Component colors for shadcn/ui compatibility */
+  /* Semantic color mapping */
   --color-background: var(--color-orange-25);
   --color-foreground: var(--color-orange-900);
   --color-card: white;
@@ -48,15 +50,34 @@
   --color-input: var(--color-orange-200);
   --color-ring: var(--color-orange-600);
 
-  /* Border radius */
-  --radius: 0.5rem;
-  
-  /* Animations */
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+  /* Additional semantic colors for UI components */
+  --color-success: oklch(0.6 0.15 142);
+  --color-success-foreground: white;
+  --color-warning: var(--color-amber-500);
+  --color-warning-foreground: var(--color-amber-900);
+  --color-info: oklch(0.6 0.15 240);
+  --color-info-foreground: white;
+
+  /* Green colors for success states */
+  --color-green-50: oklch(0.96 0.04 142);
+  --color-green-100: oklch(0.93 0.08 142);
+  --color-green-200: oklch(0.87 0.12 142);
+  --color-green-600: oklch(0.6 0.15 142);
+  --color-green-700: oklch(0.5 0.15 142);
+  --color-green-800: oklch(0.4 0.15 142);
+  --color-green-900: oklch(0.3 0.12 142);
+
+  /* Blue colors for info states */
+  --color-blue-50: oklch(0.96 0.04 240);
+  --color-blue-100: oklch(0.93 0.08 240);
+  --color-blue-200: oklch(0.87 0.12 240);
+  --color-blue-600: oklch(0.6 0.15 240);
+  --color-blue-700: oklch(0.5 0.15 240);
+  --color-blue-800: oklch(0.4 0.15 240);
+  --color-blue-900: oklch(0.3 0.12 240);
 }
 
-/* Dark mode theme */
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   @theme {
     --color-background: var(--color-orange-900);
@@ -89,9 +110,14 @@
   to { height: 0; }
 }
 
-/* Base styles */
+/* Base styles and resets */
+* {
+  border-color: var(--color-border);
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, var(--color-orange-25), var(--color-amber-25));
+  background: linear-gradient(135deg, var(--color-background), var(--color-amber-25));
+  color: var(--color-foreground);
   min-height: 100vh;
 }

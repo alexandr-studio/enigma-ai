@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   typescript: {
     tsconfigPath: './tsconfig.json',
   },
+
 }
 
 export default nextConfig
