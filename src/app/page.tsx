@@ -1,34 +1,107 @@
+import { AppLayout, PageLayout } from '@/components/layout/AppLayout';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
 export default function HomePage() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-orange-900 mb-4">
-            Enigma+ Encryption
-          </h1>
-          <p className="text-lg text-orange-700 max-w-2xl mx-auto">
-            Secure message encoding and decoding with custom rotor mappings 
-            and advanced obfuscation features.
-          </p>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-sm border border-orange-200 p-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold text-orange-800 mb-4">
-              Welcome to Enigma+
-            </h2>
-            <p className="text-orange-600 mb-6">
-              This application is currently under development. 
-              The encryption engine and user interface are being built.
-            </p>
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-              <p className="text-orange-800 font-medium">
-                🚧 Development Status: Phase 1 - Project Foundation Complete
-              </p>
-            </div>
+    <AppLayout>
+      <PageLayout
+        title="Enigma+ Encryption"
+        description="Secure message encoding and decoding with custom rotor mappings and advanced obfuscation features"
+      >
+        <div className="max-w-4xl mx-auto space-y-6">
+          {/* Welcome Card */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                Welcome to Enigma+
+                <Badge variant="secondary">Beta</Badge>
+              </CardTitle>
+              <CardDescription>
+                A modern implementation of rotor-based encryption with enhanced security features
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-amber-800 font-medium">
+                  🚧 Development Status: Phase 4 - Building UI Components
+                </p>
+                <p className="text-amber-700 text-sm mt-1">
+                  The encryption engine and storage system are complete. UI components are being developed.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features Overview */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">64-Symbol Encryption</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Support for letters, numbers, spaces, and punctuation with custom rotor permutations.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Local Storage</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  All data stored locally in your browser. No cloud dependencies or external API calls.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Advanced Obfuscation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Pre-encryption layer that eliminates patterns and statistical vulnerabilities.
+                </p>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Development Progress */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Development Progress</CardTitle>
+              <CardDescription>Current implementation status</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Project Foundation</span>
+                  <Badge variant="default">Complete</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Core Encryption Engine</span>
+                  <Badge variant="default">Complete</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Local Storage System</span>
+                  <Badge variant="default">Complete</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">UI Components</span>
+                  <Badge variant="secondary">In Progress</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Advanced Obfuscation</span>
+                  <Badge variant="outline">Planned</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </div>
-    </main>
+      </PageLayout>
+    </AppLayout>
   );
 }
