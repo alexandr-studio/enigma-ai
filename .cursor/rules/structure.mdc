@@ -1,0 +1,10 @@
+---
+description: File structure rules for Enigma app
+globs: **/*.{ts,tsx}
+alwaysApply: true
+---
+
+- Store rotor logic in `/lib/rotors/`
+- Place UI components in `/components/`
+- Use `/app/` or `/pages/` for routing (depending on Next.js version)
+- Avoid global utility files — keep logic scoped per feature

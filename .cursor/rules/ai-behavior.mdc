@@ -1,0 +1,10 @@
+---
+description: AI interaction and output rules
+globs: **/*.{ts,tsx,md}
+alwaysApply: false
+---
+
+- Break tasks into Markdown checklists with clear structure.
+- If unsure what to do, ask for clarification before acting.
+- Avoid suggesting unexplained code unless explicitly requested.
+- Use Markdown code blocks and comment complex logic inline.

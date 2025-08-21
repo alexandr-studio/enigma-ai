@@ -29,7 +29,7 @@ Help me think through how to break this into iterative pieces and write a `plan.
 - Next.js with React  
 - Tailwind CSS v4  
 - shadcn/ui  
-- biome for formatting/linting
+- eslint 9
 
 **Backend**  
 - Not required (fully local)

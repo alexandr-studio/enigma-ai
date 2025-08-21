@@ -1,0 +1,11 @@
+---
+description: UI and design guidelines
+globs: **/components/**/*.{ts,tsx}
+alwaysApply: true
+---
+
+- Use Tailwind CSS v4 and shadcn/ui for all styling and UI components.
+- Keep the layout minimal, functional, and practical.
+- Use warm color tones. Avoid dark gray or harsh contrasts unless explicitly instructed.
+- Use `shadcn/ui` form components unless custom interaction is required.
+- All interactions must work without full page reloads.

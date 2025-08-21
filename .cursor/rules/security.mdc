@@ -1,0 +1,9 @@
+---
+description: Security and data handling rules
+globs: **/*.{ts,tsx}
+alwaysApply: true
+---
+
+- Do not use external API calls or third-party encryption libraries.
+- All encryption logic must be hand-coded and explainable.
+- Use only `localStorage` or `indexedDB` for persistence — no cookies or remote storage.

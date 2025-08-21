@@ -1,0 +1,10 @@
+---
+description: Enforce pnpm usage instead of npm
+globs: **/*.{ts,js,tsx,md}
+alwaysApply: true
+---
+
+- Always use `pnpm` instead of `npm` or `yarn` for package management.
+- Prefer `pnpm install` over `npm install`.
+- Use `pnpm run` for scripts, not `npm run`.
+- Do not suggest commands using `npm` unless explicitly requested.

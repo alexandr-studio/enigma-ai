@@ -1,0 +1,9 @@
+---
+description: Rules for rotor logic and encryption in the Enigma web app
+globs: **/lib/rotors/**/*.{ts,js}
+alwaysApply: true
+---
+
+- Each rotor must be a permutation of 64 integers (0–63).
+- Encoding/decoding only works after the user sets a start position (1–64) for each rotor.
+- Rotor logic must be pure and testable — no side effects or direct DOM access.
